@@ -1,0 +1,22 @@
+{
+  "name": "my-grunt-project",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-imagemin": "^0.7.1",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-less": "~0.9.0",
+    "grunt-contrib-uglify": "~0.3.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-criticalcss": "^0.1.8",
+    "grunt-deployments": "~0.2.0",
+    "grunt-ftpush": "~0.3.3",
+    "grunt-git": "~0.2.4",
+    "load-grunt-tasks": "~0.1.0"
+  },
+  "dependencies": {
+    "imagemin-jpeg-recompress": "~2.0.0"
+  }
+}
