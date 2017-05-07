@@ -256,8 +256,9 @@ videojs.plugin('playList', playList);
   //     }
   // };
   $("#get-info").on('click', function(){
-    console.log();
+    $('.video-holder').slideDown();
     demoModule.init();
+    $('.sortable-area').slideUp();
     // getVideos();
   });
 
@@ -267,9 +268,30 @@ videojs.plugin('playList', playList);
 // demoModule.init();
 
 $(function  () {
+  var videoWrapper = $('.video-snippets .btn');
+  var hotVideoTrigger = $('#hot-videos');
+  var hotVideos = $('.video-snippets .btn.on');
   $("ol.sortable-list").sortable({
     onDrop: function(){
       getVideos();
     }
+  });
+  //Add classes to selected Videos
+  videoWrapper.on('click', function(e){
+    e.preventDefault();
+    $(this).toggleClass('on');
+  });
+  //Add videos to sortable able in list format
+  hotVideoTrigger.on('click', function(){
+    hotVideos = $('.video-snippets .btn.on');
+    console.log('beg');
+    console.log(hotVideos);
+    hotVideos.each(function(i,val){
+      console.log(val);
+      $('.sortable-list').append('<li><button class="btn" data-vid="' + $(this).data('vid') + '">' + $(this).text() + '</button></li>');
+    });  
+    $('.sortable-area').slideDown();
+    getVideos();
+    $('.video-snippets').slideUp();
   });
 });
