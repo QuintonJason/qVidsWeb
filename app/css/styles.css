@@ -590,6 +590,7 @@ body.vjs-full-window {
 html,
 body {
   width: 100%;
+  background: #efefef;
 }
 .video-holder,
 .video-holder * {
@@ -609,14 +610,14 @@ body {
   left: 50%;
   width: 100px;
   margin-left: -50px;
+  border: none;
   height: 80px;
   top: 50%;
   margin-top: -40px;
 }
 .playlist-components {
-  height: 264px;
-  width: 40%;
-  padding: 0 0 0 10px;
+  width: 30%;
+  padding: 1em 0 0em .75em;
 }
 .video-js,
 .playlist-components {
@@ -633,7 +634,6 @@ body {
   width: 100%;
   overflow-y: auto;
   color: #c0c0c0;
-  border-radius: 8px;
   display: block;
   margin: -2px 0 0 0;
   padding: 0;
@@ -691,10 +691,72 @@ body {
 .playlist .title {
   padding-left: 0;
 }
+.video-snippets,
+.sortable-area,
+.video-holder {
+  height: 100vh;
+  overflow: scroll;
+}
 .sortable-area {
   display: none;
 }
 .video-holder {
   display: none;
+  padding: 0;
+}
+#video {
+  width: 70% !important;
+  height: 100vh !important;
+}
+.sortable-list {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.sortable-list .btn:hover:not(.btn-submit) {
+  cursor: move;
+  color: white;
+  text-shadow: none;
+}
+.video-snippets p.bodycopy {
+  margin: 2em 0;
+}
+.btn {
+  background: #004c71;
+  color: #fff;
+  padding: 1em 1.75em;
+  border-radius: 9px;
+  outline: none;
+  border: none;
+  margin: 0 1em 1em 0;
+  text-shadow: none;
+}
+.btn:hover,
+.btn:focus,
+.btn.on {
+  background: #008091;
+  color: white;
+}
+.btn-submit {
+  font-size: 2.25em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: .75em .75em;
+  margin: 1em 0;
+}
+.list-flat {
+  list-style-type: none;
+  padding: 0;
+}
+.no-margin {
+  margin: 0;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
 }
 /*# sourceMappingURL=styles.map */
