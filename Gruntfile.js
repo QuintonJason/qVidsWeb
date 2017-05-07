@@ -29,22 +29,6 @@ module.exports = function(grunt){
 			all:['Gruntfile.js','app/js/script.js']
 		},
 
-		ftpush:{
-			build:{
-				auth:{
-					host:'',
-					port:21,
-					authKey:'key1' // found in .ftppass
-				},
-				// ============= Change "projectdirectory"
-				// src:'/Applications/AMPPS/www/projectdirectory/',
-				// dest:'/projectdirectory.com/',
-				exclusions:['*/.DS_Store','.DS_Store','Archive.zip','.git','Gruntfile.js','node_modules','*.sql'],
-				simple:true,
-				useList:true
-			}
-		},
-
 		less:{
 			production: {
 				options:{
@@ -62,7 +46,7 @@ module.exports = function(grunt){
 		cssmin: {
 			add_banner: {
 				options: {
-				banner: '/* Author: John Gibby @thatgibbyguy || Quinton Jason @quintonjasonjr || for @Xdesigninc #teamXdesign */'
+				banner: '/* Author: Quinton Jason @quintonjasonjr*/'
 			},
 				files: {
 				'app/css/styles.css': ['app/css/styles.css']
