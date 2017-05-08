@@ -691,6 +691,28 @@ body {
 .playlist .title {
   padding-left: 0;
 }
+.flex-wrapper,
+.sortable-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.flex-wrapper .btn,
+.sortable-list .btn {
+  flex: 1;
+}
+.flex-wrapper li,
+.sortable-list li {
+  flex: 1;
+}
+.sortable-list {
+  flex-direction: column;
+}
+.sortable-list .btn {
+  margin-right: 0;
+}
 .video-snippets,
 .sortable-area,
 .video-holder {
