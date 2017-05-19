@@ -11,7 +11,9 @@ function playList(options,arg){
       'mp4' : 'video/mp4',
       'ogv' : 'video/ogg'
     };
+    console.log(video);
     var extension = video.split('.').pop();
+    console.log(extension);
 
     return videoTypes[extension] || '';
   };
@@ -143,11 +145,11 @@ videojs.plugin('playList', playList);
     // var theVids = document.querySelectorAll('ol.sortable-list .btn');
     // console.log(theVids);
     var nodesArray = [].slice.call(document.querySelectorAll("ol.sortable-list .btn"));
-    console.log('nodesArray' + nodesArray);
+    // console.log('nodesArray' + nodesArray);
     var nodesArray
 
     
-    console.log(this);
+    // console.log(this);
     for(var i = 0; i < nodesArray.length; i++){
       videos.push({
         src: ['./media/' + nodesArray[i].dataset.vid],
@@ -156,8 +158,8 @@ videojs.plugin('playList', playList);
       });
 
     }
-    console.log('videos');
-    console.log(videos);
+    // console.log('videos');
+    // console.log(videos);
   }
   
 
@@ -177,8 +179,8 @@ videojs.plugin('playList', playList);
       console.log = this.log;
     },
     log : function(string){
-      demoModule.els.log.append('<p>' + string + '</p>');
-      console._log(string);
+      // demoModule.els.log.append('<p>' + string + '</p>');
+      // console._log(string);
     },
     cacheElements : function(){
       this.els.$playlist = $('div.playlist > ul');
@@ -264,13 +266,14 @@ videojs.plugin('playList', playList);
 
   // demoModule.init();
 // })(jQuery);
-
+ 
 // demoModule.init();
 
 $(function  () {
   var videoWrapper = $('.video-snippets .btn:not(.hot-videos)');
   var hotVideoTrigger = $('#hot-videos');
   var hotVideos = $('.video-snippets .btn.on');
+  var backBtn = $('.go-back');
   $("ol.sortable-list").sortable({
     group: 'sortable-list',
     pullPlaceholder: false,
@@ -313,18 +316,40 @@ $(function  () {
   videoWrapper.on('click', function(e){
     e.preventDefault();
     $(this).toggleClass('on');
+
   });
   //Add videos to sortable able in list format
   hotVideoTrigger.on('click', function(){
     hotVideos = $('.video-snippets .btn.on');
-    console.log('beg');
-    console.log(hotVideos);
+    // console.log('beg');
+    // console.log(hotVideos);
     hotVideos.each(function(i,val){
-      console.log(val);
+      // console.log(val);
       $('.sortable-list').append('<li><button class="btn" data-vid="' + $(this).data('vid') + '">' + $(this).text() + '</button></li>');
     });  
     $('.sortable-area').slideDown();
     getVideos();
     $('.video-snippets').slideUp();
+  });
+  //Go Back Button
+  backBtn.on('click', function(){
+    // console.log($(this).hasClass('back-to-select'));
+    // $(this).closest('.outer').slideUp();
+    $(this).closest('.outer').prev('.outer').slideDown(function(){
+      var myBtn = $(this).next('.outer').find('.go-back');
+      if(myBtn.hasClass('back-to-select')){
+        // console.log
+        $('.sortable-list').empty();  
+      }
+      var myBtn = $(this).next('.outer').find('.go-back');
+      console.log(myBtn);
+      if(myBtn.hasClass('back-to-reorder')){
+        // console.log('hi');
+        // console.log(myBtn);
+        videos = [];
+        getVideos();
+        $('.playlist-components ul').empty();
+      }
+    });
   });
 });
