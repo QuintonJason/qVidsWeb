@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <title>videoJS playlist</title>
+        <!-- <link href="http://vjs.zencdn.net/4.0/video-js.css" rel="stylesheet"> -->
+        <script src="./js/video.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel="stylesheet" href="css/sortable.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div class=" outer video-snippets text-center">
+        <p class="bodycopy">Choose your video segments to build your video</p>
+            <div class="flex-wrapper">
+                <button class="btn" data-vid="Part1_1280x720_6Mbps.mp4">
+                    Snippet Part1_1280x720_6Mbps.mp4
+                </button>
+                <button class="btn" data-vid="Part2_1280x720_6Mbps.mp4">
+                    Snippet Part2_1280x720_6Mbps.mp4
+                </button>
+                <button class="btn" data-vid="Part3_1280x720_6Mbps.mp4">
+                    Snippet Part3_1280x720_6Mbps.mp4
+                </button>
+                <button class="btn" data-vid="Part4_1280x720_6Mbps.mp4">
+                    Snippet Part4_1280x720_6Mbps.mp4
+                </button>
+                <button class="btn" data-vid="Part5_1280x720_6Mbps.mp4">
+                    Snippet Part5_1280x720_6Mbps.mp4
+                </button>
+                <button class="btn" data-vid="Part6_1280x720_6Mbps.mp4">
+                    Snippet Part6_1280x720_6Mbps.mp4
+                </button>
+                <button class="btn" data-vid="Part7_1280x720_6Mbps.mp4">
+                    Snippet Part7_1280x720_6Mbps.mp4
+                </button>
+                <button class="btn" data-vid="Part8_1280x720_6Mbps.mp4">
+                    Snippet Part8_1280x720_6Mbps.mp4
+                </button>
+                <button class="btn" data-vid="Part9_1280x720_6Mbps.mp4">
+                    Snippet Part9_1280x720_6Mbps.mp4
+                </button>
+                <button class="btn" data-vid="Part10_1280x720_6Mbps.mp4">
+                    Snippet Part10_1280x720_6Mbps.mp4
+                </button>
+                <button class="btn" data-vid="Part11_1280x720_6Mbps.mp4">
+                    Snippet Part11_1280x720_6Mbps.mp4
+                </button>
+                <button class="btn" data-vid="Part12_1280x720_6Mbps.mp4">
+                    Snippet Part12_1280x720_6Mbps.mp4
+                </button>
+            </div>
+            <div class="text-center">
+                <button id="hot-videos" class="btn btn-submit hot-videos">Select Videos</button>
+            </div>
+            
+            
+        </div>
+        <div class="outer sortable-area text-center">
+            <div>
+                <button class="go-back back-to-select gray-btn">Go Back</button>
+            </div>
+            <h2>Reorder Videos</h2>
+            <p>Drag elements to the desired playing order</p>
+            <ol class="sortable-list list-flat">
+            </ol>
+            <div class="text-center">
+                <button id="get-info" class="get-info btn btn-submit hot-videos ">Create Video</button>
+            </div>
+
+        </div>
+        <div class="outer video-holder centered">
+            <video id="video" class="video-js vjs-default-skin vjs-big-play-centered"
+                controls preload="auto" width="60%" height="264"
+                data-setup=""
+                poster="">
+            </video>
+            <div class="playlist-components">
+                <div class="playlist">
+                    <div>
+                        <button class="go-back back-to-reorder">Go Back</button>
+                    </div>
+                    <ul></ul>
+                </div>
+                <!--
+                    <div class="button-holder">
+                      <span id="prev">Prev</span>
+                      <span id="next">Next</span>
+                    </div>
+                    -->
+            </div>
+        </div>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/plugins.js"></script>
+        <script src="./js/index.js"></script>
+    </body>
+</html>
